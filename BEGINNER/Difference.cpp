@@ -4,10 +4,10 @@ using namespace std;
 
 int main(void){
 
-    int A,B;
-    while(scanf("%d %d",&A,&B) != EOF){
+    int A,B,C,D;
+    while(scanf("%d %d %d %d",&A,&B,&C,&D) != EOF){
     	
-    	cout<<"PROD"<<" = "<<A*B<<endl;
+    	cout<<"DIFERENCA"<<" = "<<(A * B - C * D)<<endl;
     }
 }
     
