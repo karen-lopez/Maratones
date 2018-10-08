@@ -7,46 +7,47 @@ int main(){
   char c;
   int cont = 1;
 
-  cin >> n >> m;
-  while(n != 0 && m != 0){
-    int auxn = 1, auxm = 1;
-    int solve[n+2][m+2] = {0};
 
-      for(int i = 1; i <= n; i++ ){
+  while(cin >> n >> m){
+    if(n != 0 && m != 0){
+      int auxn = 1, auxm = 1;
+      int solve[n+2][m+2] = {0};
 
-        for(int j =1; j <= m; j++){
+        for(int i = 1; i <= n; i++ ){
 
-            cin >> c;
-            if (c == '*'){
+          for(int j =1; j <= m; j++){
 
-              solve[i][j] = INT_MIN;
-              solve[i+1][j] += 1;
-              solve[i-1][j] += 1;
-              solve[i+1][j+1] += 1;
-              solve[i+1][j-1] += 1;
-              solve[i-1][j+1] += 1;
-              solve[i-1][j-1] += 1;
-              solve[i][j+1] += 1;
-              solve[i][j-1] += 1;
-            }
-        }
-      }
+              cin >> c;
+              if (c == '*'){
 
-      cout << "Field #" << cont<< ":" << endl;
-      for(int i = 1; i <= n; i++ ){
-
-        for(int j =1; j <= m; j++){
-
-          if(solve[i][j] >= 0) cout << solve[i][j];
-          else cout <<'*';
+                solve[i][j] = INT_MIN;
+                solve[i+1][j] += 1;
+                solve[i-1][j] += 1;
+                solve[i+1][j+1] += 1;
+                solve[i+1][j-1] += 1;
+                solve[i-1][j+1] += 1;
+                solve[i-1][j-1] += 1;
+                solve[i][j+1] += 1;
+                solve[i][j-1] += 1;
+              }
+          }
         }
 
-        cout << endl;
-      }
-      cout <<endl;
+        if(cont > 1) cout<<endl;
+        cout << "Field #" << cont<< ":"<<endl;
+        for(int i = 1; i <= n; i++ ){
 
-      cin >> n >> m;
-      cont += 1;
+          for(int j =1; j <= m; j++){
+
+            if(solve[i][j] >= 0) cout << solve[i][j];
+            else cout <<'*';
+          }
+
+          cout << endl;
+        }
+        cont += 1;
+
+    }
 
   }
 
