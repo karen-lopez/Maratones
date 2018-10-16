@@ -9,7 +9,7 @@ pair<int,int> buscar(string palabra, vector<vector <char> > matriz, int filas, i
   for(int i = 1; i <= filas; i++){  //recorre las filas
     for(int j = 1; j <= columnas; j++){ //recorre las columnas
       int k = 0;
-      if(matriz[i][j] == palabra[k]){  //busca el primer caracter de la numeroPalabras
+      if(matriz[i][j] == palabra[k]){  //busca el primer caracter de la palabra
         //busca hacia ABAJO
         if((i + (longitudPalabra-1)) <= filas){
           k = 1;
