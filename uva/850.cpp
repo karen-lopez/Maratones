@@ -1,17 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//si esta  un caracter en un vector return false
-bool buscar(char c, vector<char> v){
-  if(!v.empty()){
-    for (vector<char>::iterator it = v.begin() ; it != v.end(); ++it){
-      //cout<<" char "<<*it<<endl;
-      if (*it == c) return false;
-    }
-    return true;
-  }
-  else return true;
-}
 
 bool esClave(string linea, map<char,char> alfabeto){
   int size = linea.size();
@@ -64,13 +53,6 @@ int main(){
             modAlfabeto = true;
           }
         }
-        /*/tokenizar
-        stringstream ss(linea);
-        string s;
-        while (getline(ss, s, ' ')) {
-         palabras.push_back(s);
-       }*/
-        //palabras.push_back("**");
     }
 
     if(modAlfabeto){
