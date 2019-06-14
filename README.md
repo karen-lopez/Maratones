@@ -1,1 +1,1 @@
-# Ejercicios resueltos de maratones
+# Ejercicios resueltos de programación competitiva
